@@ -59,12 +59,12 @@ function upload($file) {
     }
 
     $filename = sprintf(
-      '../images/%s.%s',
+      '%s.%s',
       sha1_file($uploaded_photo),
       $ext
     );
-    move_uploaded_file($uploaded_photo, $filename);
-    return realpath($filename);
+    move_uploaded_file($uploaded_photo, '../images/' . $filename);
+    return 'images/' . $filename;
   }
 }
 
@@ -119,7 +119,7 @@ function update_destinasi($data) {
 }
 
 function uploadNewPhoto($oldPath, $newPhoto) {
-  unlink($oldPath);
+  unlink('../' . $oldPath);
   return upload($newPhoto);
 }
 

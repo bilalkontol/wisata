@@ -30,7 +30,7 @@ if ($_POST["submit"]) {
             background-color: #dddddd;
         }
     </style>
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -56,7 +56,7 @@ if ($_POST["submit"]) {
                             <input type="hidden" value='<?= $destinasi["photo_path"]; ?>' name="photo_path">
                             <input class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin nih bang?')" name="submit" value="Delete">
                         </form>
-                        <a class="btn btn-warning btn-sm" href="/destinasi/detail.php">Detail</a>
+                        <a class="btn btn-warning btn-sm" href="/destinasi/detail.php?id=<?= $destinasi["id"]; ?>">Detail</a>
                     </td>
                 </tr>
             <?php } ?>
