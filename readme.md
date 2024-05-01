@@ -1,6 +1,6 @@
-buat database destinasi_hamid
+buat database `destinasi_wisata`
 
 import table:
 ```
-mariadb -u root -p destinasi_hamid < destinasi.sql
+mariadb -u root -p destinasi_wisata < destinasi.sql
 ```
