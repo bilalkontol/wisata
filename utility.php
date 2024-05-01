@@ -91,7 +91,7 @@ function delete_destinasi($id, $filename) {
   header('Location: http://localhost:8080/index.php');
 }
 
-function edit_destinasi($id) {
+function get_destinasi($id) {
   global $pdo;
   $stmt = $pdo->prepare("SELECT * FROM destinations WHERE id = ?");
   $stmt->execute([$id]);
