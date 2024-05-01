@@ -34,14 +34,16 @@ $data = get_destinasi($_GET['id']);
                     </div>
                 </div> -->
                 <div class="card">
-                    <img src="/<?= $data['photo_path'] ?>" class="card-img-top img-fluid">
+                    <img src="/<?= $data['photo_path'] ?>" class="card-img-top img-fluid" style="height: 290px;object-fit: cover;">
                     <div class="card-body">
                         <h5 class="card-title"><?= $data['name'] ?></h5>
                         <p class="card-text"><?= $data['address'] ?></p>
                         <p class="card-text"><?= $data['description'] ?></p>
-                        <small><span class="badge text-bg-success"><?= $data['created_at'] ?></span></small>
-                        <span class="badge text-bg-success">pegunungan</span>
                         <a href="<?= $data['link'] ?>" class="btn btn-primary">Buka Google Map</a>
+                        <div class="d-flex justify-content-between">
+                            <small><span class="badge text-bg-success"><?= $data['created_at'] ?></span></small>
+                            <span class="badge text-bg-success">pegunungan</span>
+                        </div>
                     </div>
                 </div>
             </div>
