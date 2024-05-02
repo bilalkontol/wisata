@@ -1,5 +1,5 @@
 <?php
-include '../../utility.php';
+include '../utility.php';
 
 $data = get_destinasi($_GET['id']);
 ?>
