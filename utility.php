@@ -113,8 +113,8 @@ function update_destinasi($data) {
   $photo_path = !empty($_FILES['photo']['name']) ? uploadNewPhoto($oldData['photo_path'], $_FILES['photo']) : $oldData['photo_path'];
   $updated = date('Y-m-d H:i:s');
   
-  $stmt = $pdo->prepare('UPDATE destinations SET name = ?, address = ?, photo_path = ?, description = ?, category_id = ?, link = ?, updated_at = ?');
-  $stmt->execute([$name, $address, $photo_path, $description, $category_id, $link, $updated]);
+  $stmt = $pdo->prepare('UPDATE destinations SET name = ?, address = ?, photo_path = ?, description = ?, category_id = ?, link = ?, updated_at = ? WHERE id = ?');
+  $stmt->execute([$name, $address, $photo_path, $description, $category_id, $link, $updated, $data['id']]);
   header('Location: http://localhost:8080/dashboard');
 }
 
