@@ -132,4 +132,11 @@ function tampilkan_destinasi() {
   return $stmt->fetchAll();
 }
 
+function tampilkan_kategori() {
+  global $pdo;
+  $stmt = $pdo->prepare("SELECT id,name FROM categories");
+  $stmt->execute();
+  return $stmt->fetchAll();
+}
+
 ?>

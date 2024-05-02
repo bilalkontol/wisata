@@ -10,7 +10,7 @@
           <a class="nav-link" aria-current="page" href="/dashboard">Destinasi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/dashboard/kategori.php">Kategori</a>
+          <a class="nav-link" href="/dashboard/kategori">Kategori</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="/logout.php" onclick="return confirm('Yakin mau logout nih bang?')">Logout</a>
