@@ -63,7 +63,7 @@ function upload($file) {
       sha1_file($uploaded_photo),
       $ext
     );
-    move_uploaded_file($uploaded_photo, '../images/' . $filename);
+    move_uploaded_file($uploaded_photo, realpath('../../images') . '/' . $filename);
     return 'images/' . $filename;
   }
 }
@@ -76,6 +76,7 @@ function buat_destinasi($data, $photo) {
   $category_id = isset($data['category_id']) ? $data['category_id'] : '';
   $link = isset($data['link']) ? $data['link'] : '';
   $photo_path = upload($photo);
+  die;
   $created = date('Y-m-d H:i:s');
   // Insert new record into the contacts table
   $stmt = $pdo->prepare('INSERT INTO destinations(name, address, photo_path, description, category_id, link, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)');
