@@ -37,7 +37,7 @@ if ($_POST["submit"]) {
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-start">
             <h1>Kelola destinasi</h1>
-            <a class="btn btn-primary" href="/destinasi/create.php">Buat destinasi</a>
+            <a class="btn btn-primary" href="/dashboard/destinasi/create.php">Buat destinasi</a>
         </div>
         <table>
             <tr>
@@ -50,7 +50,7 @@ if ($_POST["submit"]) {
                     <td><?php echo $destinasi["name"]; ?></td>
                     <td><?= $destinasi["address"] ?></td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="/destinasi/edit.php?id=<?= $destinasi["id"]; ?>">Edit</a>
+                        <a class="btn btn-primary btn-sm" href="/dashboard/destinasi/edit.php?id=<?= $destinasi["id"]; ?>">Edit</a>
                         <form method="POST" style="display: inline;">
                             <input type="hidden" value='<?= $destinasi["id"]; ?>' name="id">
                             <input type="hidden" value='<?= $destinasi["photo_path"]; ?>' name="photo_path">

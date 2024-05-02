@@ -25,7 +25,7 @@ function login($data) {
   if ($username == $real_username) {
     $password = $data["password"];
     if (password_verify($password, $real_password)) {
-      header('Location: http://localhost:8080/index.php');
+      header('Location: http://localhost:8080/dashboard');
     } else {
       echo "
       <script>
@@ -80,7 +80,7 @@ function buat_destinasi($data, $photo) {
   // Insert new record into the contacts table
   $stmt = $pdo->prepare('INSERT INTO destinations(name, address, photo_path, description, category_id, link, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)');
   $stmt->execute([$name, $address, $photo_path, $description, $category_id, $link, $created]);
-  header('Location: http://localhost:8080/index.php');
+  header('Location: http://localhost:8080/dashboard');
 }
 
 function delete_destinasi($id, $filename) {
@@ -88,7 +88,7 @@ function delete_destinasi($id, $filename) {
   $stmt = $pdo->prepare("DELETE FROM destinations WHERE id = ?");
   $stmt->execute([$id]);
   unlink($filename);
-  header('Location: http://localhost:8080/index.php');
+  header('Location: http://localhost:8080/dashboard');
 }
 
 function get_destinasi($id) {
@@ -115,7 +115,7 @@ function update_destinasi($data) {
   
   $stmt = $pdo->prepare('UPDATE destinations SET name = ?, address = ?, photo_path = ?, description = ?, category_id = ?, link = ?, updated_at = ?');
   $stmt->execute([$name, $address, $photo_path, $description, $category_id, $link, $updated]);
-  header('Location: http://localhost:8080/index.php');
+  header('Location: http://localhost:8080/dashboard');
 }
 
 function uploadNewPhoto($oldPath, $newPhoto) {
