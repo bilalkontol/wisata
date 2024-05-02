@@ -28,16 +28,21 @@ if (isset($_POST["submit"])) {
     </div>
 
     <div class="row align-items-md-stretch">
-
-    <?php foreach ($data as $destinasi) { ?>
-    <?php } ?>
-      <div class="col-md-6">
-        <div class="h-100 p-5 text-bg-dark rounded-3">
-          <h2><?= $destinasi["name"] ?></h2>
-          <p><?= $destinasi["address"] ?></p>
-          <a href="/destinasi/detail.php?id=<?= $destinasi["id"] ?>" class="btn btn-outline-light" type="button">Detail</a>
+      <?php if (empty($data)) { ?>
+        <div class="alert alert-danger" role="alert">
+          Data belum tersedia, Silahkan tambah data
         </div>
-      </div>
+      <?php } else { ?>
+        <?php foreach ($data as $destinasi) { ?>
+          <div class="col-md-6">
+            <div class="h-100 p-5 text-bg-dark rounded-3">
+              <h2><?= $destinasi["name"] ?></h2>
+              <p><?= $destinasi["address"] ?></p>
+              <a href="/destinasi/detail.php?id=<?= $destinasi["id"] ?>" class="btn btn-outline-light" type="button">Detail</a>
+            </div>
+          </div>
+        <?php } ?>
+      <?php } ?>
     </div>
 
     <footer class="pt-3 mt-4 text-body-secondary border-top">
