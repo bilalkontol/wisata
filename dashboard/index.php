@@ -2,7 +2,7 @@
 require '../utility.php';
 
 $data = tampilkan_destinasi();
-if ($_POST["submit"]) {
+if (isset($_POST["submit"])) {
     delete_destinasi($_POST["id"], $_POST["photo_path"]);
 }
 

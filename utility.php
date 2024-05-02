@@ -76,7 +76,6 @@ function buat_destinasi($data, $photo) {
   $category_id = isset($data['category_id']) ? $data['category_id'] : '';
   $link = isset($data['link']) ? $data['link'] : '';
   $photo_path = upload($photo);
-  die;
   $created = date('Y-m-d H:i:s');
   // Insert new record into the contacts table
   $stmt = $pdo->prepare('INSERT INTO destinations(name, address, photo_path, description, category_id, link, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)');
@@ -120,7 +119,7 @@ function update_destinasi($data) {
 }
 
 function uploadNewPhoto($oldPath, $newPhoto) {
-  unlink('../' . $oldPath);
+  unlink('../../' . $oldPath);
   return upload($newPhoto);
 }
 
