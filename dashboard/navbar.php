@@ -13,7 +13,7 @@
           <a class="nav-link" href="/dashboard/kategori.php">Kategori</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/logout.php">Logout</a>
+          <a class="nav-link" href="/logout.php" onclick="return confirm('Yakin mau logout nih bang?')">Logout</a>
         </li>
       </ul>
     </div>
