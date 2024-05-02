@@ -1,5 +1,6 @@
 <?php
 require '../utility.php';
+require 'auth.php';
 
 $data = tampilkan_destinasi();
 if (isset($_POST["submit"])) {

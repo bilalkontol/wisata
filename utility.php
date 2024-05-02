@@ -25,6 +25,8 @@ function login($data) {
   if ($username == $real_username) {
     $password = $data["password"];
     if (password_verify($password, $real_password)) {
+      session_start();
+      $_SESSION['username'] = $username;
       header('Location: http://localhost:8080/dashboard');
     } else {
       echo "
