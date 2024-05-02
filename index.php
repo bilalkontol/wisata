@@ -7,6 +7,6 @@
 </head>
 <body>
     <p>Selamat datang</p>
-    <a href="/destinasi.php">Destinasi</a>
+    <a href="/destinasi">Destinasi</a>
 </body>
 </html>
