@@ -1,6 +1,6 @@
 <?php
 
-include '../utility.php';
+include '../../utility.php';
 if (!empty($_POST)) {
     if (!empty($_FILES)) {
         buat_destinasi($_POST, $_FILES['photo']);

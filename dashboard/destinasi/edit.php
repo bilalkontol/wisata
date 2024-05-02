@@ -1,5 +1,5 @@
 <?php
-include '../utility.php';
+include '../../utility.php';
 $data = get_destinasi($_GET['id']);
 if (!empty($_POST)) {
     update_destinasi($_POST);

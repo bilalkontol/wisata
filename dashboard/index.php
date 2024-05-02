@@ -1,5 +1,5 @@
 <?php
-require 'utility.php';
+require '../utility.php';
 
 $data = tampilkan_destinasi();
 if ($_POST["submit"]) {
