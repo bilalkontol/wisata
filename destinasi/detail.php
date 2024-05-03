@@ -18,22 +18,6 @@ $kategori = get_kategori($data["category_id"]);
     <div class="container mt-5">
         <div class="row">
             <div class="col-6">
-                <!-- <div class="card mb-3" style="max-width: 540px;">
-                    <div class="row g-0">
-                        <div class="col-md-4">
-                        <img src="/<?= $data['photo_path'] ?>" class="img-fluid rounded-start">
-                        </div>
-                        <div class="col-md-8">
-                        <div class="card-body">
-                            <h5 class="card-title"><?= $data['name'] ?></h5>
-                            <p class="card-text"><?= $data['address'] ?></p>
-                            <p class="card-text"><?= $data['description'] ?></p>
-                            <a href="<?= $data['link'] ?>" class="btn btn-primary">Buka Google Map</a>
-                            <p class="card-text"><small class="text-body-secondary"><?= $data['created_at'] ?></small></p>
-                        </div>
-                        </div>
-                    </div>
-                </div> -->
                 <div class="card">
                     <img src="/<?= $data['photo_path'] ?>" class="card-img-top img-fluid" style="height: 290px;object-fit: cover;">
                     <div class="card-body">

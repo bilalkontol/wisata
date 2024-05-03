@@ -9,7 +9,6 @@ halaman yang tersedia:
 ```
 USER-BIASA
 halaman home: /index.php
-halaman destinasi wisata: /destinasi/index.php
 halaman detail destinasi: /destinasi/detail.php
 
 ADMIN-ONLY
