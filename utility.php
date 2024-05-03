@@ -117,6 +117,14 @@ function get_destinasi($id) {
   return $stmt->fetch();
 }
 
+function get_kategori($id) {
+  global $pdo;
+  $stmt = $pdo->prepare("SELECT * FROM categories WHERE id = ?");
+  $stmt->execute([$id]);
+  
+  return $stmt->fetch();
+}
+
 function update_destinasi($data) {
   global $pdo;
   $stmt = $pdo->prepare("SELECT * FROM destinations WHERE id = ?");
@@ -134,6 +142,20 @@ function update_destinasi($data) {
   $stmt = $pdo->prepare('UPDATE destinations SET name = ?, address = ?, photo_path = ?, description = ?, category_id = ?, link = ?, updated_at = ? WHERE id = ?');
   $stmt->execute([$name, $address, $photo_path, $description, $category_id, $link, $updated, $data['id']]);
   header('Location: http://localhost:8080/dashboard');
+}
+
+function update_kategori($data) {
+  global $pdo;
+  $stmt = $pdo->prepare("SELECT * FROM categories WHERE id = ?");
+  $stmt->execute([$data['id']]);
+  $oldData = $stmt->fetch();
+  
+  $name = isset($data['name']) ? $data['name'] : $oldData['name'];
+  $updated = date('Y-m-d H:i:s');
+  
+  $stmt = $pdo->prepare('UPDATE categories SET name = ?, updated_at = ? WHERE id = ?');
+  $stmt->execute([$name, $updated, $data['id']]);
+  header('Location: http://localhost:8080/dashboard/kategori');
 }
 
 function uploadNewPhoto($oldPath, $newPhoto) {
