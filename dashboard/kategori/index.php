@@ -4,6 +4,10 @@ require '../auth.php';
 
 $data = tampilkan_kategori();
 
+if (isset($_POST["submit"])) {
+    delete_kategori($_POST["id"]);
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
