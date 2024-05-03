@@ -2,6 +2,7 @@
 include '../utility.php';
 
 $data = get_destinasi($_GET['id']);
+$kategori = get_kategori($data["category_id"]);
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +43,7 @@ $data = get_destinasi($_GET['id']);
                         <a href="<?= $data['link'] ?>" class="btn btn-primary">Buka Google Map</a>
                         <div class="d-flex justify-content-between">
                             <small><span class="badge text-bg-success"><?= $data['created_at'] ?></span></small>
-                            <span class="badge text-bg-success">pegunungan</span>
+                            <span class="badge text-bg-success"><?= $kategori["name"] ?></span>
                         </div>
                     </div>
                 </div>
