@@ -2,10 +2,12 @@
 include '../../utility.php';
 require '../auth.php';
 
-$data = get_destinasi($_GET['id']);
+$destinasi = get_destinasi($_GET['id']);
 if (!empty($_POST)) {
     update_destinasi($_POST);
 }
+
+$categories = tampilkan_kategori();
 
 ?>
 
@@ -27,7 +29,7 @@ if (!empty($_POST)) {
                     <input type="hidden" value="<?= $_GET['id']; ?>" name="id">
                     <div class="mb-3">
                         <label class="form-label" for="name">nama destinasi</label>
-                        <input class="form-control" type="text" name="name" id="name" value="<?= $data["name"] ?>">
+                        <input class="form-control" type="text" name="name" id="name" value="<?= $destinasi["name"] ?>">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="photo">upload gambar</label>
@@ -35,21 +37,22 @@ if (!empty($_POST)) {
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="address">alamat destinasi</label>
-                        <input class="form-control" type="text" name="address" id="address" value="<?= $data["address"] ?>">
+                        <input class="form-control" type="text" name="address" id="address" value="<?= $destinasi["address"] ?>">
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="link">link google map</label>
-                        <input class="form-control" type="url" name="link" id="link" value="<?= $data["link"] ?>">
+                        <input class="form-control" type="url" name="link" id="link" value="<?= $destinasi["link"] ?>">
                     </div>
                     <div class="mb-3 form-floating">
-                        <textarea class="form-control" name="description" id="description"><?= $data["description"] ?></textarea>
+                        <textarea class="form-control" name="description" id="description"><?= $destinasi["description"] ?></textarea>
                         <label for="description">deskripsi</label>
                     </div>
                     <div class="mb-3">
                         <label class="form-label" for="category">pilih kategori: </label>
                         <select class="form-select" name="category_id" id="category">
-                            <option value="1">pegunungan</option>
-                            <option value="2">taman</option>
+                            <?php foreach ($categories as $kategori) { ?>
+                                <option <?= $destinasi["category_id"] == $kategori["id"] ? "selected" : "" ?> value="<?= $kategori["id"] ?>"><?= $kategori["name"] ?></option>
+                            <?php } ?>
                         </select>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>

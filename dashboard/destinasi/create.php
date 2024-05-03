@@ -8,6 +8,9 @@ if (!empty($_POST)) {
         buat_destinasi($_POST, $_FILES['photo']);
     }
 }
+
+$data = tampilkan_kategori();
+
 ?>
 
 <!DOCTYPE html>
@@ -48,8 +51,9 @@ if (!empty($_POST)) {
                     <div class="mb-3">
                         <label class="form-label" for="category">pilih kategori: </label>
                         <select class="form-select" name="category_id" id="category">
-                            <option value="1">pegunungan</option>
-                            <option value="2">taman</option>
+                        <?php foreach ($data as $kategori) { ?>
+                            <option value="<?= $kategori["id"] ?>"><?= $kategori["name"] ?></option>
+                        <?php } ?>
                         </select>
                     </div>
                     <button name="submit" type="submit" class="btn btn-primary">Submit</button>
