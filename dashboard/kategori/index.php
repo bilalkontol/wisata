@@ -32,7 +32,7 @@ $data = tampilkan_kategori();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </head>
 <body>
-    <?php include 'navbar.php'; ?>
+    <?php include '../navbar.php'; ?>
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-start">
             <h1>Kelola kategori</h1>
@@ -43,14 +43,13 @@ $data = tampilkan_kategori();
                 <th>Nama</th>
                 <th>Action</th>
             </tr>
-            <?php foreach ($data as $destinasi) { ?>
+            <?php foreach ($data as $kategori) { ?>
                 <tr>
-                    <td><?php echo $destinasi["name"]; ?></td>
+                    <td><?php echo $kategori["name"]; ?></td>
                     <td>
-                        <a class="btn btn-primary btn-sm" href="/dashboard/destinasi/edit.php?id=<?= $destinasi["id"]; ?>">Edit</a>
+                        <a class="btn btn-primary btn-sm" href="/dashboard/kategori/edit.php?id=<?= $kategori["id"]; ?>">Edit</a>
                         <form method="POST" style="display: inline;">
-                            <input type="hidden" value='<?= $destinasi["id"]; ?>' name="id">
-                            <input type="hidden" value='<?= $destinasi["photo_path"]; ?>' name="photo_path">
+                            <input type="hidden" value='<?= $kategori["id"]; ?>' name="id">
                             <input class="btn btn-danger btn-sm" type="submit" onclick="return confirm('Yakin nih bang?')" name="submit" value="Delete">
                         </form>
                     </td>
