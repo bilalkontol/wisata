@@ -104,8 +104,10 @@ function delete_destinasi($id, $filename) {
 
 function delete_kategori($id) {
   global $pdo;
-  $stmt = $pdo->prepare("DELETE FROM categories WHERE id = ?");
-  $stmt->execute([$id]);
+  try {
+    $stmt = $pdo->prepare("DELETE FROM categories WHERE id = ?");
+    $stmt->execute([$id]);
+  } catch (\Throwable $th) {}
   header('Location: http://localhost:8080/dashboard/kategori');
 }
 
