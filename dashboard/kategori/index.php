@@ -36,7 +36,7 @@ $data = tampilkan_kategori();
     <div class="container mt-5">
         <div class="d-flex justify-content-between align-items-start">
             <h1>Kelola kategori</h1>
-            <a class="btn btn-primary" href="/dashboard/destinasi/create.php">Buat kategori</a>
+            <a class="btn btn-primary" href="/dashboard/kategori/create.php">Buat kategori</a>
         </div>
         <table>
             <tr>

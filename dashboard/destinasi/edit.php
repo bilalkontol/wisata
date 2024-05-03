@@ -19,37 +19,41 @@ if (!empty($_POST)) {
 <body>
     <div class="container">
         <h1>Edit destinasi</h1>
-        <form method="POST" enctype="multipart/form-data">
-            <input type="hidden" value="<?= $_GET['id']; ?>" name="id">
-            <div class="mb-3">
-                <label class="form-label" for="name">nama destinasi</label>
-                <input class="form-control" type="text" name="name" id="name" value="<?= $data["name"] ?>">
+        <div class="card">
+            <div class="card-body">
+                <form method="POST" enctype="multipart/form-data">
+                    <input type="hidden" value="<?= $_GET['id']; ?>" name="id">
+                    <div class="mb-3">
+                        <label class="form-label" for="name">nama destinasi</label>
+                        <input class="form-control" type="text" name="name" id="name" value="<?= $data["name"] ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="photo">upload gambar</label>
+                        <input class="form-control" type="file" name="photo" id="photo">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="address">alamat destinasi</label>
+                        <input class="form-control" type="text" name="address" id="address" value="<?= $data["address"] ?>">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="link">link google map</label>
+                        <input class="form-control" type="url" name="link" id="link" value="<?= $data["link"] ?>">
+                    </div>
+                    <div class="mb-3 form-floating">
+                        <textarea class="form-control" name="description" id="description"><?= $data["description"] ?></textarea>
+                        <label for="description">deskripsi</label>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label" for="category">pilih kategori: </label>
+                        <select class="form-select" name="category_id" id="category">
+                            <option value="1">pegunungan</option>
+                            <option value="2">taman</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
             </div>
-            <div class="mb-3">
-                <label class="form-label" for="photo">upload gambar</label>
-                <input class="form-control" type="file" name="photo" id="photo">
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="address">alamat destinasi</label>
-                <input class="form-control" type="text" name="address" id="address" value="<?= $data["address"] ?>">
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="link">link google map</label>
-                <input class="form-control" type="url" name="link" id="link" value="<?= $data["link"] ?>">
-            </div>
-            <div class="mb-3 form-floating">
-                <textarea class="form-control" name="description" id="description"><?= $data["description"] ?></textarea>
-                <label for="description">deskripsi</label>
-            </div>
-            <div class="mb-3">
-                <label class="form-label" for="category">pilih kategori: </label>
-                <select class="form-select" name="category_id" id="category">
-                    <option value="1">pegunungan</option>
-                    <option value="2">taman</option>
-                </select>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+        </div>
     </div>
 </body>
 </html>

@@ -85,6 +85,16 @@ function buat_destinasi($data, $photo) {
   header('Location: http://localhost:8080/dashboard');
 }
 
+function buat_kategori($data) {
+  global $pdo;
+  $name = isset($data['name']) ? $data['name'] : '';
+  $created = date('Y-m-d H:i:s');
+  // Insert new record into the contacts table
+  $stmt = $pdo->prepare('INSERT INTO categories(name, created_at) VALUES (?, ?)');
+  $stmt->execute([$name, $created]);
+  header('Location: http://localhost:8080/dashboard/kategori');
+}
+
 function delete_destinasi($id, $filename) {
   global $pdo;
   $stmt = $pdo->prepare("DELETE FROM destinations WHERE id = ?");
