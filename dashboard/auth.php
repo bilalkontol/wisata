@@ -3,5 +3,5 @@
 session_start();
 
 if (!isset($_SESSION["username"])) {
-    header('Location: http://localhost:8080');
+    header('Location: http://localhost:8080/login.php');
 }

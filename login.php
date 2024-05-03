@@ -1,4 +1,8 @@
 <?php
+session_start();
+if ($_SESSION) {
+    header('Location: http://localhost:8080/dashboard');
+}
 include 'utility.php';
 
 if (!empty($_POST)) {
