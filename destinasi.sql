@@ -82,7 +82,6 @@ CREATE TABLE `users` (
   `username` varchar(255) NOT NULL,
   `email_verified_at` timestamp NULL DEFAULT NULL,
   `password` varchar(255) NOT NULL,
-  `remember_token` varchar(100) DEFAULT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -98,7 +97,7 @@ CREATE TABLE `users` (
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
 INSERT INTO `users` VALUES
-(11,'Administrator','hamid@example.com','hamid','2024-04-27 03:04:33','$2y$10$MEcVpHFx9UBLvF1/W7KsoOCHnnhi9bT.TT5WSWfBAHhLYs3ji9jk2','x4cEt3Yy6Aji4Ja9FRaFV5XWfhJDdMBzS4vU5jH8y1BElHVkDneKkO90aAEC','2024-04-27 03:04:33','2024-04-27 03:04:33');
+(11,'Administrator','hamid@example.com','hamid','2024-04-27 03:04:33','$2y$10$MEcVpHFx9UBLvF1/W7KsoOCHnnhi9bT.TT5WSWfBAHhLYs3ji9jk2','2024-04-27 03:04:33','2024-04-27 03:04:33');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

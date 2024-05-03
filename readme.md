@@ -1,5 +1,10 @@
 buat database `destinasi_wisata`
 
+update password:
+```
+php -r 'echo(password_hash("test", PASSWORD_BCRYPT) . "\n");'
+```
+
 import table:
 ```
 mariadb -u root -p destinasi_wisata < destinasi.sql
