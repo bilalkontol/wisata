@@ -1,6 +1,8 @@
 <?php
 
 include '../../utility.php';
+require '../auth.php';
+
 if (!empty($_POST)) {
     buat_kategori($_POST);
 }

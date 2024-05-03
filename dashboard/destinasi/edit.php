@@ -1,5 +1,7 @@
 <?php
 include '../../utility.php';
+require '../auth.php';
+
 $data = get_destinasi($_GET['id']);
 if (!empty($_POST)) {
     update_destinasi($_POST);

@@ -1,6 +1,8 @@
 <?php
 
 include '../../utility.php';
+require '../auth.php';
+
 if (!empty($_POST)) {
     if (!empty($_FILES)) {
         buat_destinasi($_POST, $_FILES['photo']);
