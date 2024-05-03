@@ -127,9 +127,7 @@ function get_kategori($id) {
 
 function update_destinasi($data) {
   global $pdo;
-  $stmt = $pdo->prepare("SELECT * FROM destinations WHERE id = ?");
-  $stmt->execute([$data['id']]);
-  $oldData = $stmt->fetch();
+  $oldData = get_destinasi($data['id']);
   
   $name = isset($data['name']) ? $data['name'] : $oldData['name'];
   $address = isset($data['address']) ? $data['address'] : $oldData['address'];
@@ -146,9 +144,7 @@ function update_destinasi($data) {
 
 function update_kategori($data) {
   global $pdo;
-  $stmt = $pdo->prepare("SELECT * FROM categories WHERE id = ?");
-  $stmt->execute([$data['id']]);
-  $oldData = $stmt->fetch();
+  $oldData = get_kategori($data['id']);
   
   $name = isset($data['name']) ? $data['name'] : $oldData['name'];
   $updated = date('Y-m-d H:i:s');
