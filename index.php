@@ -16,7 +16,13 @@ if (isset($_POST["submit"])) {
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-</head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
+  </head>
 <body>
 <div class="container py-4">
     <div class="p-5 mb-4 bg-body-tertiary rounded-3">
@@ -26,6 +32,8 @@ if (isset($_POST["submit"])) {
         <a href="https://maps.app.goo.gl/yyKSETjjrz1P23Pd8" target="_blank" class="btn btn-primary btn-lg" type="button">Jelajahi</a>
       </div>
     </div>
+
+    <div id="map" class="mb-4" style="height: 280px;"></div>
 
     <div class="row align-items-md-stretch">
       <?php if (empty($data)) { ?>
@@ -49,5 +57,13 @@ if (isset($_POST["submit"])) {
       © 2024
     </footer>
   </div>
+
+  <script>
+    const map = L.map('map').setView([-6.91806000, 106.92667000], 13);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+}).addTo(map);
+  </script>
 </body>
 </html>
